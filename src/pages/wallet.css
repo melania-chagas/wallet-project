@@ -1,3 +1,25 @@
-h1 {
-  color: white;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(13, 67, 80);
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+
 }

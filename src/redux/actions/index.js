@@ -1,8 +1,12 @@
 export const USER_EMAIL = 'USER_EMAIL';
+export const CURRENCIES = 'CURRENCIES';
 
-const getUserEmail = (email) => ({
+export const getUserEmail = (email) => ({
   type: USER_EMAIL,
   email,
 });
 
-export default getUserEmail;
+export const getCurrencies = (currencies) => ({
+  type: CURRENCIES,
+  currencies,
+});

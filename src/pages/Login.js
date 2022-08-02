@@ -2,7 +2,7 @@ import { Wallet } from 'phosphor-react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import getUserEmail from '../redux/actions/index';
+import { getUserEmail } from '../redux/actions/index';
 import './login.css';
 
 class Login extends React.Component {
