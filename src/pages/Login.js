@@ -1,3 +1,4 @@
+import { Wallet } from 'phosphor-react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -50,39 +51,52 @@ class Login extends React.Component {
   render() {
     const { isButtonDisabled, userEmail, password } = this.state;
     return (
-
-      <form className="form">
-        <div className="inputs">
-          <input
-            type="email"
-            data-testid="email-input"
-            placeholder="Digite seu email"
-            name="userEmail"
-            value={ userEmail }
-            onChange={ this.handleChange }
-          />
-          <input
-            type="password"
-            minLength="6"
-            placeholder="senha 6 dígitos"
-            data-testid="password-input"
-            onChange={ this.handleChange }
-            name="password"
-            value={ password }
-
-          />
-          <div className="divButton">
-            <button
-              type="submit"
-              disabled={ isButtonDisabled }
-              onClick={ this.handleClick }
-              className="button"
-            >
-              Entrar
-            </button>
-          </div>
+      <div className="row">
+        <div className="walletIcon">
+          <Wallet size={ 120 } color="white" />
         </div>
-      </form>
+        <form className="form">
+          <div className="inputs">
+
+            <div className="input-email">
+              <input
+                type="email"
+                data-testid="email-input"
+                placeholder="Email"
+                name="userEmail"
+                value={ userEmail }
+                onChange={ this.handleChange }
+                id="email"
+              />
+            </div>
+
+            <div className="input-password">
+              <input
+                type="password"
+                minLength="6"
+                placeholder="Senha"
+                data-testid="password-input"
+                onChange={ this.handleChange }
+                name="password"
+                value={ password }
+                id="password"
+              />
+            </div>
+
+            <div className="divButton">
+              <button
+                type="submit"
+                disabled={ isButtonDisabled }
+                onClick={ this.handleClick }
+                className="button"
+              >
+                Entrar
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
     );
   }
 }
