@@ -11,10 +11,11 @@ body {
 }
 
 .header {
+  align-items: center;
   background-color: rgb(8, 34, 41);
   color: white;
   display: flex;
-  font-size: 15px;
+  font-size: 14px;
   justify-content: space-between;
   padding: 10px;
 }
@@ -59,4 +60,10 @@ select {
 
 select:hover {
   border: 2px solid rgb(76, 158, 180);
+}
+
+.header :link {
+  color: white;
+  display: flex;
+  justify-content: baseline;
 }
