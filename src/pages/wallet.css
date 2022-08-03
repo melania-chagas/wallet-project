@@ -5,17 +5,18 @@
 
 body {
   background-color: rgb(13, 67, 80);
-  display: flex;
   margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 .header {
-  background-color: white;
+  background-color: rgb(8, 34, 41);
+  color: white;
   display: flex;
+  font-size: 15px;
   justify-content: space-between;
   padding: 10px;
-  width: 100%;
 }
 
 .title {
@@ -25,4 +26,37 @@ body {
 
 .wallet {
   width: 100%;
+}
+
+.walletForm input {
+  border: 2px solid rgb(12, 49, 59);
+  border-radius: 5px;
+  height: 35px;
+  margin: 5px;
+  width: 130px;
+}
+
+.walletForm input:hover {
+  border: 2px solid rgb(76, 158, 180);
+}
+
+.walletForm {
+  padding: 15px;
+}
+
+label {
+  color: white;
+  margin: 20px;
+}
+
+select {
+  border: 2px solid rgb(12, 49, 59);
+  border-radius: 5px;
+  height: 35px;
+  margin: 5px;
+  width: 130px;
+}
+
+select:hover {
+  border: 2px solid rgb(76, 158, 180);
 }
