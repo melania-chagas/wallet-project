@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import WalletForm from '../components/WalletForm';
 import './wallet.css';
 import { getCurrencies } from '../redux/actions';
+import Header from '../components/Header';
 
 class Wallet extends React.Component {
   componentDidMount() {
@@ -20,17 +21,9 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const { email } = this.props;
     return (
       <div className="wallet">
-        <header className="header">
-          <h2>
-            Wallet
-          </h2>
-          <h2 data-testid="email-field">{email}</h2>
-          <h2 data-testid="total-field">{ `Despesa total:R$ ${0}`}</h2>
-          <h3 data-testid="header-currency-field">BRL</h3>
-        </header>
+        <Header />
         <WalletForm />
       </div>
     );
@@ -39,15 +32,10 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   dispatchCurrencies: PropTypes.func.isRequired,
-  email: PropTypes.string.isRequired,
 };
-
-const mapStateToProps = (state) => ({
-  email: state.user.email,
-});
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchCurrencies: (currencies) => dispatch(getCurrencies(currencies)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
+export default connect(null, mapDispatchToProps)(Wallet);
