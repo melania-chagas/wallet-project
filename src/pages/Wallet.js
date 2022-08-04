@@ -24,7 +24,7 @@ class Wallet extends React.Component {
     return (
       <div className="wallet">
         <Header />
-        <h3>Adicione sua despesa abaixo:</h3>
+        <h3>Adicione sua despesa abaixo</h3>
         <WalletForm />
       </div>
     );
