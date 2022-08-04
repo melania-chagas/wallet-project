@@ -10,8 +10,8 @@ import getAllCurrencies from '../services/api';
 class Wallet extends React.Component {
   async componentDidMount() {
     const { dispatchCurrencies } = this.props;
-    const data = await getAllCurrencies();
-    let keys = Object.keys(data);
+    const rawData = await getAllCurrencies();
+    let keys = Object.keys(rawData);
     keys = keys.filter((currencie) => currencie !== 'USDT');
     dispatchCurrencies(keys);
   }
