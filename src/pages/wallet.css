@@ -42,6 +42,9 @@ body {
 }
 
 .walletForm {
+  border: 1px solid  white;
+  border-radius: 5px;
+  margin-top: 20px;
   padding: 15px;
 }
 
@@ -66,4 +69,30 @@ select:hover {
   color: white;
   display: flex;
   justify-content: baseline;
+}
+
+.buttonAddExpense {
+  display: flex;
+  justify-content: center;
+}
+
+.buttonAddExpense button {
+  background-color: rgb(8, 34, 41);
+  border: 2px solid rgb(12, 49, 59);
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  margin: 5px;
+  width: 130px;
+}
+
+.buttonAddExpense button:hover {
+  border: 2px solid rgb(76, 158, 180);
+}
+
+.wallet h3 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }

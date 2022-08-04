@@ -5,25 +5,26 @@ import WalletForm from '../components/WalletForm';
 import './wallet.css';
 import { getCurrencies } from '../redux/actions';
 import Header from '../components/Header';
+import getAllCurrencies from '../services/api';
 
 class Wallet extends React.Component {
-  componentDidMount() {
-    this.getAllCurrencies();
-  }
-
-  getAllCurrencies = async () => {
+  async componentDidMount() {
     const { dispatchCurrencies } = this.props;
-    const response = await fetch('https://economia.awesomeapi.com.br/json/all');
-    const data = await response.json();
-    const arrayData = Object.keys(data);
-    const filteredDataList = arrayData.filter((currencie) => currencie !== 'USDT');
-    dispatchCurrencies(filteredDataList);
+    const data = await getAllCurrencies();
+    let keys = Object.keys(data);
+    keys = keys.filter((currencie) => currencie !== 'USDT');
+    dispatchCurrencies(keys);
   }
+  // É possível substituir a função acima por esta (obtém-se o mesmo resultado):
+  // componentDidMount() {
+  //   getAllCurrencies().then((data) => dispatchCurrencies(data));
+  // }
 
   render() {
     return (
       <div className="wallet">
         <Header />
+        <h3>Adicione sua despesa abaixo:</h3>
         <WalletForm />
       </div>
     );
