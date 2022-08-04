@@ -47,11 +47,11 @@ class WalletForm extends Component {
     return (
       <div className="walletForm">
         <form>
-          <label htmlFor="value">
+          <label htmlFor="valor">
             Valor
             <input
               type="number"
-              id="value"
+              id="valor"
               data-testid="value-input"
               onChange={ this.handleChange }
               name="value"
