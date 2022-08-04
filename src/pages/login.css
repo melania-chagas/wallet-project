@@ -16,8 +16,8 @@
 }
 
 .button:hover {
-  background-color: rgb(29, 51, 58);
-  color: white;
+  background-color: rgb(76, 158, 180);
+  color: rgb(8, 34, 41);
 
 }
 
@@ -43,5 +43,5 @@ input {
 }
 
 input:hover {
-  border: 3px solid rgb(8, 34, 41);
+  border: 2px solid rgb(76, 158, 180);
 }

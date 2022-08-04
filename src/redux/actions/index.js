@@ -1,5 +1,4 @@
-export const USER_EMAIL = 'USER_EMAIL';
-export const CURRENCIES = 'CURRENCIES';
+import { USER_EMAIL, CURRENCIES, ADD_EXPENSES } from './actionsTypes';
 
 export const getUserEmail = (email) => ({
   type: USER_EMAIL,
@@ -9,4 +8,9 @@ export const getUserEmail = (email) => ({
 export const getCurrencies = (currencies) => ({
   type: CURRENCIES,
   currencies,
+});
+
+export const getExpenseAddition = (expenses) => ({
+  type: ADD_EXPENSES,
+  expenses,
 });
