@@ -74,6 +74,7 @@ select:hover {
 .buttonAddExpense {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .buttonAddExpense button {

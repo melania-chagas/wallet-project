@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
+import './table.css';
 
 export default class Table extends Component {
   render() {
     return (
-      <div>
+      <div className="table">
         <table>
           <thead>
-            <th> Descrição </th>
-            <th> Tag </th>
-            <th> Método de pagamento </th>
-            <th> Valor </th>
-            <th> Moeda </th>
-            <th> Câmbio utilizado </th>
-            <th> Valor convertido </th>
-            <th> Moeda de conversão </th>
-            <th> Editar/Excluir </th>
+            <th className="description"> Descrição </th>
+            <th className="tag"> Tag </th>
+            <th className="method"> Método de pagamento </th>
+            <th className="value"> Valor </th>
+            <th className="currency"> Moeda </th>
+            <th className="exchange"> Câmbio utilizado </th>
+            <th className="convertedValue"> Valor convertido </th>
+            <th className="conversionCurrency"> Moeda de conversão </th>
+            <th className="edit/delete"> Editar/Excluir </th>
           </thead>
         </table>
       </div>
