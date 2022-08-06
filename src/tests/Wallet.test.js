@@ -44,4 +44,16 @@ describe('Testes acerca da página de \'Wallet\'', () => {
     expect(linkHeader).toHaveClass('header');
   });
 
+  test('Verifica se o valor total de despesas aparece no cabeçalho da página', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const expenseTotal = screen.getByTestId('total-field');
+    expect(expenseTotal).toHaveTextContent(/0.00/i);
+  });
+
+  test('A moeda selecionada inicialmente deve ser a USD', async () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const currency = await screen.findByText("USD");
+    expect(currency).toBeVisible();
+  });
+
 });

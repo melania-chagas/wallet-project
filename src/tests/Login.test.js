@@ -3,8 +3,15 @@ import Login from "../pages/Login"
 import { screen } from '@testing-library/react';
 import {renderWithRouterAndRedux } from "./helpers/renderWith"
 import userEvent from "@testing-library/user-event";
+import App from '../App';
 
 describe('Testes acerca da página de \'Login\'', () => {
+
+  test('O caminho desta url deve ser /', () => {
+    const { history } = renderWithRouterAndRedux(<App />);
+    const { location: { pathname }} = history;
+    expect(pathname).toBe('/');
+  });
 
   test('Deve existir um ícone na tela ', () => {
     renderWithRouterAndRedux(<Login />);
@@ -47,5 +54,4 @@ describe('Testes acerca da página de \'Login\'', () => {
     const buttonLogin = screen.getByRole('button', {name: 'Entrar'});
     expect(buttonLogin).toBeEnabled();
   });
-
 });
