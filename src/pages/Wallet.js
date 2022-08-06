@@ -6,6 +6,7 @@ import './wallet.css';
 import { getCurrencies } from '../redux/actions';
 import Header from '../components/Header';
 import getAllCurrencies from '../services/api';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   async componentDidMount() {
@@ -26,6 +27,7 @@ class Wallet extends React.Component {
         <Header />
         <h3>Adicione sua despesa abaixo</h3>
         <WalletForm />
+        <Table />
       </div>
     );
   }
