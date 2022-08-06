@@ -1,0 +1,47 @@
+import React from 'react';
+import { fireEvent, screen } from '@testing-library/react';
+import {renderWithRouterAndRedux } from "./helpers/renderWith"
+import userEvent from "@testing-library/user-event";
+import Wallet from '../pages/Wallet';
+
+describe('Testes acerca da página de \'Wallet\'', () => {
+
+  test('Verifica se existe o texto \'Adicione sua despesa abaixo\'', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const h3 = screen.getByRole('heading', {name:/Adicione sua despesa abaixo/i});
+    expect(h3).toBeInTheDocument();
+  });
+
+  test('Deve existir um campo para inserir o valor da despesa', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const value = screen.getByTestId("value-input");
+    userEvent.type(value, '250');
+    expect(value).toHaveValue(250);
+  });
+
+  test('Deve existir um campo para inserir a descrição da despesa', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const description = screen.getByTestId("description-input");
+    userEvent.type(description, 'Teclado');
+    expect(description).toHaveValue('Teclado');
+  });
+
+  test('Deve existir um botão \'Adicionar despesa\'', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const buttonAddExpense = screen.getByTestId("button-add-expense");
+    expect(buttonAddExpense).toBeInTheDocument();
+  });
+
+  test('Deve existir um campo para selecionar uma moeda', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const currency = screen.getByTestId("currency-input");
+    expect(currency).toBeInTheDocument();
+  });
+
+  test('Verifica se o componente \'Header\' renderiza na tela', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const linkHeader = screen.getByRole("banner");
+    expect(linkHeader).toHaveClass('header');
+  });
+
+});

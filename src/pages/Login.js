@@ -53,7 +53,11 @@ class Login extends React.Component {
     return (
       <div className="row">
         <div className="walletIcon">
-          <Wallet size={ 120 } color="white" />
+          <Wallet
+            size={ 120 }
+            color="white"
+            data-testid="wallet-icon"
+          />
         </div>
         <form className="form">
           <div className="inputs">

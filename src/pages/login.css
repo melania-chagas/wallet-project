@@ -39,6 +39,7 @@ input {
   border-radius: 5px;
   height: 40px;
   margin: 5px;
+  padding: 0 10px;
   width: 280px;
 }
 
