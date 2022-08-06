@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import {renderWithRouterAndRedux } from "./helpers/renderWith"
 import userEvent from "@testing-library/user-event";
 import Wallet from '../pages/Wallet';
@@ -53,6 +53,20 @@ describe('Testes acerca da página de \'Wallet\'', () => {
   test('A moeda selecionada inicialmente deve ser a USD', async () => {
     renderWithRouterAndRedux(<Wallet />);
     const currency = await screen.findByText("USD");
+    expect(currency).toBeVisible();
+  });
+
+  test('Verifica se há uma tabela na página', () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const table = screen.getByTestId('table');
+    expect(table).toBeInTheDocument();
+  });
+
+  test('Verifica se o campo \'Moeda\' recebe o valor correto', async () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const buttonAddExpense = screen.getByRole('button', {name: /Adicionar despesa/i});
+    userEvent.click(buttonAddExpense);
+    const currency = await screen.findByText("Dólar Americano/Real Brasileiro");
     expect(currency).toBeVisible();
   });
 

@@ -11,7 +11,7 @@ class Table extends Component {
     // transforma para "Number" pois os valores vêm como string
 
       <div className="table">
-        <table>
+        <table data-testid="table">
           <thead className="table-header">
             <tr>
               <th> Descrição </th>
@@ -57,9 +57,7 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  expenses: PropTypes.arrayOf(PropTypes.shape({
-    length: PropTypes.number,
-  })).isRequired,
+  expenses: PropTypes.arrayOf().isRequired,
 };
 
 const mapStateToProps = (state) => ({
