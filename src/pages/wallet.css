@@ -42,7 +42,6 @@ body {
 }
 
 .walletForm {
-  border: 1px solid  white;
   border-radius: 5px;
   margin-top: 20px;
   padding: 15px;
@@ -78,17 +77,21 @@ select:hover {
 }
 
 .buttonAddExpense button {
-  background-color: rgb(8, 34, 41);
-  border: 2px solid rgb(12, 49, 59);
+  align-items: center;
+  background-color: rgb(19, 110, 54);
+  border: 2px solid rgb(7, 39, 19);
   border-radius: 5px;
   color: white;
-  height: 35px;
+  display: flex;
+  font-size: 14px;
+  height: 45px;
   margin: 5px;
+  padding: 8px;
   width: 130px;
 }
 
 .buttonAddExpense button:hover {
-  border: 2px solid rgb(76, 158, 180);
+  background-color: rgb(14, 80, 39);
 }
 
 .wallet h3 {

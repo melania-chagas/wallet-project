@@ -27,7 +27,7 @@ class Header extends Component {
         <h2 data-testid="email-field">{email}</h2>
         <h2 data-testid="total-field">
           {
-            `${this.getTotal().toFixed(2)}`
+            `${(this.getTotal().toFixed(2))}`
           }
         </h2>
         <h2 data-testid="header-currency-field">BRL</h2>

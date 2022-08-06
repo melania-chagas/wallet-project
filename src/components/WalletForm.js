@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import { Plus } from 'phosphor-react';
 import { getExpenseAddition } from '../redux/actions';
 import getAllCurrencies from '../services/api';
 
@@ -125,6 +126,7 @@ class WalletForm extends Component {
               onClick={ this.expenseAddition }
               data-testid="button-add-expense"
             >
+              <Plus size={ 30 } />
               Adicionar despesa
             </button>
           </div>
