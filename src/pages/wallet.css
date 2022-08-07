@@ -78,8 +78,7 @@ select:hover {
 
 .buttonAddExpense button {
   align-items: center;
-  background-color: rgb(19, 110, 54);
-  border: 2px solid rgb(7, 39, 19);
+  background-color: rgb(165, 45, 36);
   border-radius: 5px;
   color: white;
   display: flex;
@@ -91,7 +90,7 @@ select:hover {
 }
 
 .buttonAddExpense button:hover {
-  background-color: rgb(14, 80, 39);
+  background-color: rgb(114, 34, 32);
 }
 
 .wallet h3 {

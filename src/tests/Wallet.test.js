@@ -62,7 +62,7 @@ describe('Testes acerca da página de \'Wallet\'', () => {
     expect(table).toBeInTheDocument();
   });
 
-  test('Verifica se o campo \'Moeda\' recebe o valor correto', async () => {
+  test('Verifica se o campo \'Moeda\' recebe o valor correto após clicar diretamente no botão que adiciona despesa', async () => {
     renderWithRouterAndRedux(<Wallet />);
     const buttonAddExpense = screen.getByRole('button', {name: /Adicionar despesa/i});
     userEvent.click(buttonAddExpense);
@@ -70,4 +70,11 @@ describe('Testes acerca da página de \'Wallet\'', () => {
     expect(currency).toBeVisible();
   });
 
+  test('Verifica se o campo \'Câmbio\' recebe o valor correto após clicar diretamente no botão que adiciona despesa', async () => {
+    renderWithRouterAndRedux(<Wallet />);
+    const buttonAddExpense = screen.getByRole('button', {name: /Adicionar despesa/i});
+    userEvent.click(buttonAddExpense);
+    const exchange = await screen.findByText("5.17");
+    expect(exchange).toBeVisible();
+  });
 });
