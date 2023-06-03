@@ -1,9 +1,15 @@
+import { Trash } from 'phosphor-react';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteExpense } from '../redux/actions';
 import './table.css';
 
 class Table extends Component {
+  handleClickBtnDelete = ({ target }) => {
+    dispatchDeleteExpense(target);
+  }
+
   render() {
     const { expenses } = this.props;
     return (
@@ -46,6 +52,13 @@ class Table extends Component {
                     }
                   </td>
                   <td>BRL</td>
+                  <button
+                    type="button"
+                    data-testid="delete-btn"
+                    onClick={ this.handleClickBtnDelete }
+                  >
+                    <Trash size={ 20 } />
+                  </button>
                 </tr>
               ))
             }
@@ -57,11 +70,17 @@ class Table extends Component {
 }
 
 Table.propTypes = {
-  expenses: PropTypes.arrayOf().isRequired,
+  expenses: PropTypes.shape({
+    map: PropTypes.func,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
 });
 
-export default connect(mapStateToProps)(Table);
+const mapDispatchToProps = (dispatch) => ({
+  dispatchDeleteExpense: ({ target }) => dispatch(deleteExpense(target)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);
